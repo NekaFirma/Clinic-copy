@@ -26,13 +26,13 @@ jobs:
       run: dotnet build $PROJECT --configuration $config --no-restore 
       
     - name: Test with dotnet
-      run: dotnet test $TEST --logger "trx;LogFileName=<TestResults.trx>"
+      run: dotnet test $TEST --logger trx --results-directory "TestResults"
       
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v2
       with:
         name: dotnet-results
-        path: TestResults
+        path: TestResults.xml
       if: ${{ always() }}
       
   publish-test-results:

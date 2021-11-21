@@ -31,13 +31,13 @@ jobs:
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v2
       with:
-        name: test-results
-        path: jest-junit.xml
+        name: dotnet-results
+        path: TestResults/mytests.xml
       if: ${{ always() }}
     - uses: dorny/test-reporter@v1
       if: ${{ always() }}
       with:
-        artifact: test-results            # artifact name
+        artifact: dotnet-results          # artifact name
         name: JEST Tests                  # Name of the check run which will be created
         path: '*.xml'                     # Path to test results (inside artifact .zip)
         reporter: jest-junit              # Format of test results

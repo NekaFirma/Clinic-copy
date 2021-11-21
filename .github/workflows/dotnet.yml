@@ -27,3 +27,4 @@ jobs:
       if: always()
       with:
         files: test-results/**/*.xml
+        path: ${{github.workspace}}/HealthCareClinic/HospitalTests/

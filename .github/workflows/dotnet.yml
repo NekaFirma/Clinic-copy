@@ -26,4 +26,4 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
-        files: ${{github.workspace}}/HealthCareClinic/HospitalTests/HospitalTests/test-results/**/*.trx
+        files: /home/runner/work/Clinic-copy/Clinic-copy/HealthCareClinic/HospitalTests/TestResults/*.trx

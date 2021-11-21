@@ -5,6 +5,12 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
+  <PropertyGroup>
+    <PackageId>NuGet.Workflow</PackageId>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/NekaFirma/Clinic-copy</RepositoryUrl>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="Class1.cs" />
   </ItemGroup>

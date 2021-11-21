@@ -19,11 +19,13 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore $PROJECT
     - name: Build
-      run: dotnet build $PROJECT --no-restore
+      run: dotnet build $PROJECT --no-restore 
+    - name: JUnit install
+      run: dotnet add package JUnitTestLogger --version 1.1.0
     - name: Test
-      run: dotnet test $TEST --logger:JUnit
+      run: dotnet test $TEST --logger "junit"
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
-        files: /home/runner/work/Clinic-copy/Clinic-copy/HealthCareClinic/HospitalTests/TestResults/*.trx
+        files: /home/runner/work/Clinic-copy/Clinic-copy/HealthCareClinic/HospitalTests/TestResults/*.xml

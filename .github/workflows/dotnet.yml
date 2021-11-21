@@ -6,15 +6,13 @@ on:
   pull_request:
     branches: [ main ]
 
-env:
-  project: 'HealthCareClinic/Hospital/Hospital.csproj'
-  test: 'HealthCareClinic/HospitalTests/HospitalTests.csproj'
-
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    env:
+      project: 'HealthCareClinic/Hospital/Hospital.csproj'
+      test: 'HealthCareClinic/HospitalTests/HospitalTests.csproj'
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET

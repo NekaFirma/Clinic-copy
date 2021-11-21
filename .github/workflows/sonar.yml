@@ -44,6 +44,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           PROJECT: 'HealthCareClinic/Hospital/Hospital.csproj'
           TEST: 'HealthCareClinic/HospitalTests/HospitalTests.csproj'
+        working-directory: HealthCareClinic/Hospital/
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"NekaFirma_Clinic-copy" /o:"nekafirma" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"

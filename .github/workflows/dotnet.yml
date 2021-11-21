@@ -24,10 +24,10 @@ jobs:
     - name: Build
       run: dotnet build $PROJECT --no-restore
     - name: Test
-      run: dotnet test $TEST --logger trx
+      run: dotnet test $TEST --logger "trx;logfilename=TestResults.trx"
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
-        files: Clinic-copy/HealthCareClinic/HospitalTests/TestResults/**.trx
+        files: test-results/**/*.xml
 

@@ -10,9 +10,10 @@
   </ItemGroup>
 
   <PropertyGroup>
-    <PackageId>INTEGRATION-IS</PackageId>
+    <PackageId>INTEGRATION.IS</PackageId>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/NekaFirma/Clinic-copy</RepositoryUrl>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>

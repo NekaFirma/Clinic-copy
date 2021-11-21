@@ -36,6 +36,7 @@ jobs:
       if: ${{ always() }}
   report:
     runs-on: ubuntu-latest
+    needs: build-and-test
     steps:
     - uses: dorny/test-reporter@v1
       with:

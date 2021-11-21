@@ -11,17 +11,20 @@ jobs:
 
     runs-on: ubuntu-latest
     env:
-      project: 'HealthCareClinic/Hospital/Hospital.csproj'
-      test: 'HealthCareClinic/HospitalTests/HospitalTests.csproj'
+      PROJECT: 'HealthCareClinic/Hospital/Hospital.csproj'
+      TEST: 'HealthCareClinic/HospitalTests/HospitalTests.csproj'
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+    - name: Display the path
+      run: echo $PATH
+      shell: bash
     - name: Restore dependencies
-      run: dotnet restore ${{project}}
+      run: dotnet restore $PROJECT
     - name: Build
-      run: dotnet build ${{project}} --no-restore
+      run: dotnet build $PROJECT --no-restore
     - name: Test
-      run: dotnet test ${{test}} --no-build --verbosity normal
+      run: dotnet test $TEST --no-build --verbosity normal

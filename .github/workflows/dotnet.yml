@@ -21,9 +21,9 @@ jobs:
     - name: Build
       run: dotnet build $PROJECT --no-restore
     - name: Test
-      run: dotnet test $TEST --logger trx --no-build --verbosity normal
+      run: dotnet test $TEST --logger trx --no-build
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
-        files: test-results/**/*.trx
+        files: ${{github.workspace}}/HealthCareClinic/HospitalTests/HospitalTests/test-results/**/*.trx

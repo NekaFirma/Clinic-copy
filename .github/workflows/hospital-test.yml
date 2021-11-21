@@ -4,8 +4,8 @@ on:
       - main
 
 env:
-  project: 'Health-Care-Clinic-develop/HealthCareClinic/Hospital/Hospital.csproj'
-  test: 'Health-Care-Clinic-develop/HealthCareClinic/HospitalTests/HospitalTests.csproj'
+  project: 'HealthCareClinic/Hospital/Hospital.csproj'
+  test: 'HealthCareClinic/HospitalTests/HospitalTests.csproj'
 
 jobs:
  build:

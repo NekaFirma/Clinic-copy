@@ -26,13 +26,13 @@ jobs:
       run: dotnet build $PROJECT --configuration $config --no-restore 
       
     - name: Test with dotnet
-      run: dotnet test $TEST --logger "trx;logfilename=mytests.trx" --results-directory "TestResults"
+      run: dotnet test $TEST --logger "trx;logfilename=mytests.xml" --results-directory "TestResults"
       
     - name: Upload dotnet test results
       uses: actions/upload-artifact@v2
       with:
         name: dotnet-results
-        path: TestResults
+        path: TestResults/mytests.xml
       if: ${{ always() }}
       
   publish-test-results:
@@ -50,4 +50,4 @@ jobs:
       - name: Publish Unit Test Results
         uses: EnricoMi/publish-unit-test-result-action@v1
         with:
-          files: artifacts/dotnet-results
+          files: artifacts/**/*.xml

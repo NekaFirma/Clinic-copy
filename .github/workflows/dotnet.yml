@@ -22,9 +22,9 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore $PROJECT
     - name: Build
-      run: dotnet build $PROJECT
+      run: dotnet build $PROJECT --no-restore
     - name: Test
-      run: dotnet test $TEST
+      run: dotnet test $TEST --logger trx --no-build --verbosity normal
     - name: Publish Unit Test Results
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()

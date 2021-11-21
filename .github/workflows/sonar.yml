@@ -47,6 +47,6 @@ jobs:
         shell: powershell
         run: |
           .\.sonar\scanner\dotnet-sonarscanner begin /k:"NekaFirma_Clinic-copy" /o:"nekafirma" /d:sonar.login="${{ secrets.SONAR_TOKEN }}" /d:sonar.host.url="https://sonarcloud.io"
-          dotnet restore $PROJECT
-          dotnet build --configuration $config --no-restore $PROJECT  
+          dotnet restore
+          dotnet build --configuration $config --no-restore
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.login="${{ secrets.SONAR_TOKEN }}"

@@ -29,5 +29,5 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v1
       if: always()
       with:
-        files: TestResults/**/*.trx
+        files: Clinic-copy/HealthCareClinic/HospitalTests/TestResults/**.trx
 

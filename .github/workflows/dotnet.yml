@@ -20,10 +20,12 @@ jobs:
       run: dotnet restore $PROJECT
     - name: Build
       run: dotnet build $PROJECT --no-restore 
-    - name: Test
-      run: dotnet test $TEST --logger:"trx;LogFileName=TestResults.xml"
-    - name: Publish Unit Test Results
-      uses: EnricoMi/publish-unit-test-result-action@v1
-      if: always()
+    - name: Test with dotnet
+      run: dotnet test $TEST --logger trx --results-directory "TestResults"
+    - name: Upload dotnet test results
+      uses: actions/upload-artifact@v2
       with:
-        files: /home/runner/work/Clinic-copy/Clinic-copy/HealthCareClinic/HospitalTests/TestResults/*.xml
+        name: dotnet-results
+        path: TestResults
+      # Use always() to always run this step to publish test results when there are test failures
+      if: ${{ always() }}

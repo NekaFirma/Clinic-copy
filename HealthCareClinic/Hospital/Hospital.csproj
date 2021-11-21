@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
-    <PackageId>NuGet.Workflow</PackageId>
+    <PackageId>HOSPITAL-IS</PackageId>
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/NekaFirma/Clinic-copy</RepositoryUrl>
   </PropertyGroup>

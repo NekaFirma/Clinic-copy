@@ -9,6 +9,12 @@
     <Compile Remove="Pharmacy\Service\ReportServicee.cs" />
   </ItemGroup>
 
+  <PropertyGroup>
+    <PackageId>INTEGRATION-IS</PackageId>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/NekaFirma/Clinic-copy</RepositoryUrl>
+  </PropertyGroup>
+
   <ItemGroup>
     <Folder Include="Partnership\Model\" />
     <Folder Include="Partnership\Service\" />

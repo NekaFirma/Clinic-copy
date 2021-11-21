@@ -33,9 +33,9 @@ jobs:
       with:
         name: test-results
         path: jest-junit.xml
-      if: ${{ always() 
+      if: ${{ always() }}
     - uses: dorny/test-reporter@v1
-      if: ${{ always() 
+      if: ${{ always() }}
       with:
         artifact: test-results            # artifact name
         name: JEST Tests                  # Name of the check run which will be created

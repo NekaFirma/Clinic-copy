@@ -5,7 +5,7 @@ on:
     tags:
     - "v[0-9]+.[0-9]+.[0-9]+"
 env:
-  HOSPITAL-PATH : 'HealthCareClinic/Hospital/Hospital.csproj'
+  HOSPITAL-DLL-PATH : 'HealthCareClinic/Hospital/Hospital.csproj'
 
 jobs:
   build:
@@ -17,12 +17,13 @@ jobs:
     - name: Set VERSION variable from tag
       run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
     - name: Build
-      run: dotnet build ${{ env.HOSPITAL-PATH }} --configuration Release /p:Version=${VERSION}
+      run: dotnet build ${{env.HOSPITAL-DLL-PATH }} --configuration Release /p:Version=${VERSION}
     - name: Test
-      run: dotnet test ${{ env.HOSPITAL-PATH}} --configuration Release /p:Version=${VERSION} --no-build
+      run: dotnet test ${{env.HOSPITAL-DLL-PATH}} --configuration Release /p:Version=${VERSION} --no-build
     - name: Pack
-      run: dotnet pack  ${{ env.HOSPITAL-PATH }} --configuration Release /p:Version=${VERSION} --no-build --output .
+      run: dotnet pack  ${{env.HOSPITAL-DLL-PATH }} --configuration Release /p:Version=${VERSION} --no-build --output .
     - name: Push
       run: dotnet nuget push HOSPITAL-IS.${VERSION}.nupkg --source https://nuget.pkg.github.com/Clinic-copy/index.json --api-key ${GITHUB_TOKEN}
       env:
         GITHUB_TOKEN: ${{ secrets.PACKAGE_TOKEN }}
+

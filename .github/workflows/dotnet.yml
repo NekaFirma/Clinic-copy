@@ -23,7 +23,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore $PROJECT
     - name: Build
-      run: dotnet build $PROJECT --configuration $config --no-restor
+      run: dotnet build $PROJECT --configuration $config --no-restore
     - name: set pr build number
       id: PRNUMBER
       if: ${{ github.event_name == 'pull_request' }}

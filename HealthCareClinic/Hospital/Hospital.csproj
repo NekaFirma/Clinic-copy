@@ -45,8 +45,6 @@
     <PackageReference Include="SSH.NET" Version="2020.0.1" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\ClinicCore\ClinicCore.csproj" />
-  </ItemGroup>
+  
 
 </Project>

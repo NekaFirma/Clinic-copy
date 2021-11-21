@@ -32,7 +32,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: dotnet-results
-        path: TestResults
+        path: TestResults/mytests.xml
       if: ${{ always() }}
       
   publish-test-results:
